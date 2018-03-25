@@ -5,8 +5,10 @@ import BottomTabs from './components/Navigation/tabs/BottomTabs.js'
 class Home extends Component {
   render () {
     return (
-
-         this.props.navigation.push('BottomTabs')
+      <TouchableOpacity
+        style={styles.item}
+        onPress={() => this.props.navigation.push('BottomTabs')}
+       />
 
     )
   }
@@ -14,9 +16,8 @@ class Home extends Component {
 
 const App = createStackNavigator({
   Home,
-  BottomTabs,
-  MaterialTopTabs,
-  MaterialBottomTabs
+  BottomTabs
+
 })
 
 const styles = {
@@ -27,3 +28,5 @@ const styles = {
     borderBottomColor: '#eee'
   }
 }
+
+export default App
