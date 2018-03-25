@@ -1,71 +1,21 @@
-import React, {Component}from 'react';
-import { View, Text } from 'react-native';
-import { createBottomTabNavigator } from 'react-navigation-tabs';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import React, { Component } from 'react'
+import { View, Text } from 'react-native'
+import { createBottomTabNavigator } from 'react-navigation-tabs'
+import Icon from 'react-native-vector-icons/MaterialIcons'
 
-const tabBarIcon = name => ({ tintColor }) => (
-  <Icon name={name} color={tintColor} size={24} />
-);
+import Feed from '../../feed'
+import Search from '../../search'
+import Noti from '../../noti'
+import Profile from '../../profile'
+import Photo from '../../foto'
 
-class Album extends Component {
-  static navigationOptions = {
-    tabBarIcon: tabBarIcon('photo-album'),
-  };
+export default Tabs = () => {
+  const Tabs = createBottomTabNavigator({
+    Feed,
+    Search,
+    Noti,
+    Profile
+  })
 
-  render() {
-    return (
-      <View>
-        <Text>Album</Text>
-      </View>
-    );
-  }
+  return <Tabs />
 }
-
-class Library extends Component {
-  static navigationOptions = {
-    tabBarIcon: tabBarIcon('photo-library'),
-  };
-
-  render() {
-    return (
-      <View>
-        <Text>Library</Text>
-      </View>
-    );
-  }
-}
-
-class History extends Component {
-  static navigationOptions = {
-    tabBarIcon: tabBarIcon('history'),
-  };
-
-  render() {
-    return (
-      <View>
-        <Text>History</Text>
-      </View>
-    );
-  }
-}
-
-class Cart extends Component {
-  static navigationOptions = {
-    tabBarIcon: tabBarIcon('shopping-cart'),
-  };
-
-  render() {
-    return (
-      <View>
-        <Text>Cart</Text>
-      </View>
-    );
-  }
-}
-
-export default createBottomTabNavigator({
-  Album,
-  Library,
-  History,
-  Cart,
-});
