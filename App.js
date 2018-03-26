@@ -1,13 +1,14 @@
 import React, {Component} from 'react'
 import { View, Text, TouchableOpacity, StyleSheet, AppRegistry } from 'react-native'
-import { createStackNavigator, StackNavigator } from 'react-navigation'
-import BottomTabs from './components/Navigation/tabs/BottomTabs.js'
-export default App = () => {
+import { Provider } from 'react-redux'
+import Tabs from './components/Navigation/TabsNavigationRoot'
+import './ReactotronConfig'
 
-  const App = createStackNavigator({
-    BottomTabs
-  })
+export default class App extends Component {
 
-  return <BottomTabs />
+  render () {
+    return (
+      <Tabs />
+    )
+  }
 }
-

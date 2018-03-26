@@ -9,6 +9,7 @@ import {
   Image,
   Dimensions
 } from 'react-native';
+import Reactotron from 'reactotron-react-native'
 var width = Dimensions.get('window').width;
 var feedData = require('./feedData');
 const ds1 = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2, sectionHeaderHasChanged: (s1, s2) => s1 !== s2});
@@ -50,7 +51,7 @@ export default class Feed extends Component {
   }
 
 sectionHeader(sectionData, sectionID){
-if(sectionID == 0){
+if(sectionID === '0'){
 	return(<Stories />)
 }else{
 	
@@ -68,7 +69,7 @@ if(sectionID == 0){
 }
 }
    renderFeed(data){
-    
+    Reactotron.log(data)
     
         return(
           <View>
@@ -77,10 +78,10 @@ if(sectionID == 0){
                 initialListSize={5}
                 enableEmptySections={true}
                 dataSource={data}
-                renderRow={this._renderRow.bind(this)}
+                 renderRow={this._renderRow.bind(this)}
                 // showsHorizontalScrollIndicator={false}
                 // stickyHeaderIndices = {[0]} 
-                renderSectionHeader={this.sectionHeader}
+                 renderSectionHeader={this.sectionHeader}
                 // stickySectionHeadersEnabled={true}
                 // onChangeVisibleRows={(changedRows) => console.log(changedRows)}
                 automaticallyAdjustContentInsets={false}

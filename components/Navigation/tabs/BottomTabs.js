@@ -9,13 +9,9 @@ import Noti from '../../noti'
 import Profile from '../../profile'
 import Photo from '../../foto'
 
-export default Tabs = () => {
-  const Tabs = createBottomTabNavigator({
-    Feed,
-    Search,
-    Noti,
-    Profile
-  })
-
-  return <Tabs />
-}
+export default createBottomTabNavigator({
+  Feed,
+  Search,
+  Noti,
+  Profile
+})
